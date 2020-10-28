@@ -1,17 +1,37 @@
 import Problem3.*;
 import org.junit.Test;
 
+import java.util.UUID;
+
 import static org.junit.Assert.*;
 
 public class Problem3Test {
     @Test
-    public void catchTheBugInBook() {
-        // quiz
+    public void catchTheBugInBook()
+    {
+        BookFiction a = new BookFiction("A", "Me", "SciFi");
+        BookFiction b = new BookFiction(a);
+        b.setGenres("Fantasy");
+        assertTrue(a.equals(b));
+
+        BookRomance c = new BookRomance("Romeo", "Shake");
+        BookRomance d = new BookRomance(c);
+        c.setAuthor("Shakespeare");
+        assertTrue(c.equals(d));
     }
 
     @Test
-    public void catchTheBugInMovie() {
-        // quiz
+    public void catchTheBugInMovie()
+    {
+        MovieAction a = new MovieAction("PG13", "Revengers");
+        MovieAction b = new MovieAction(a);
+        b.setTitle("Revengers: Age of Altron");
+        assertTrue(a.equals(b));
+
+        MovieComedy c = new MovieComedy("E","Dumb Dumber");
+        MovieComedy d = new MovieComedy(c);
+        d.setRating("PG");
+        assertTrue(c.equals(d));
     }
 
     // DO NOT REMOVE OR CHANGE ANYTHING BELOW THIS!
